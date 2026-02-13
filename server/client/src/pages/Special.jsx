@@ -43,12 +43,12 @@ const Special = () => {
     <div className="relative min-h-screen w-screen overflow-hidden bg-gradient-to-br from-primary-50 via-secondary to-primary-100">
       <FloatingHearts />
      
-      <div className="absolute z-10 inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,228,230,0.4),_transparent_60%)]" />
+      <div className="absolute z-10 inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,228,230,0.4),_transparent_60%)] pointer-events-none" />
 
      <button
           type="button"
           onClick={() => navigate("/")}
-          className="m-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
+          className="relative z-20 m-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
         >
           <span className="text-base">?</span>
           Back to Home
