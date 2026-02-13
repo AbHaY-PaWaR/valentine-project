@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { storeSpecialPassword } from "../services/api";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import FloatingHearts from "../component/particles/FloatingHearts";
 
 const Special = () => {

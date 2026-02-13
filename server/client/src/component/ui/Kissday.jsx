@@ -82,14 +82,14 @@ const Kissday = ({ data }) => {
                 </div>
 
                 <p className="mt-6 text-lg font-semibold text-primary font-mono sm:text-xl">
-                  Sending you a million kisses, {"\u{1F48B}"}
+                  Sending you a million kisses, 
                 </p>
 
                 <div className="mt-4 flex items-center justify-center gap-2 text-rose-100">
-                  <span className="text-2xl font-semibold text-red-500 font-accent italic sm:text-3xl">
+                  <span className="text-3xl font-bold text-red-500 font-accent italic sm:text-5xl">
                     {safeData.receiverName} {"\u{1F48B}"}
                   </span>
-                  <Heart className="h-6 w-6 text-rose-500" fill="currentColor" />
+                  
                 </div>
 
                 <motion.button
