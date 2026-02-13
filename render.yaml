@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: valentinesproject
+    env: node
+    plan: free
+    buildCommand: npm install && npm --prefix server install && npm --prefix server/client install && npm --prefix server/client run build
+    startCommand: node server/src/server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
