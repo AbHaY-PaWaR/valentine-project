@@ -1,10 +1,11 @@
-import React, { useMemo } from "react";
+import React, { useId, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { loadHeartShape } from "@tsparticles/shape-heart";
 
 const FloatingHearts = () => {
   const [init, setInit] = React.useState(false);
+  const instanceId = useId().replace(/[:]/g, "");
 
   React.useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -109,9 +110,9 @@ const FloatingHearts = () => {
 
   return (
     <Particles
-      id="tsparticles"
+      id={`tsparticles-${instanceId}`}
       options={options}
-      className="absolute inset-0 pointer-events-none"
+      className="absolute inset-0 pointer-events-none z-0"
     />
   );
 };
