@@ -3,7 +3,7 @@ import { storeSpecialPassword } from "../services/api";
 import { useNavigate } from "react-router";
 
 const Special = () => {
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [error, setError] = useState("");
