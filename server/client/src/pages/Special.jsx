@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { storeSpecialPassword } from "../services/api";
+import { useNavigate } from "react-router";
 
 const Special = () => {
+  const nevigate = useNavigate();
   const [password, setPassword] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [error, setError] = useState("");
@@ -41,7 +43,7 @@ const Special = () => {
       <button
           type="button"
           onClick={() => navigate("/")}
-          className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
+          className="m-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
         >
           <span className="text-base">?</span>
           Back to Home
