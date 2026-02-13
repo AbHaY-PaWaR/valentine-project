@@ -91,9 +91,7 @@ export default function RoseDay({ data }) {
             <span className="italic text-3xl font-accent bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
             {safeData.senderName}
           </span>
-          <div className="w-5 h-5 sm:w-44 sm:h-44">
-                    <DotLottieReact src={roseAnimation} loop autoplay />
-                  </div>
+          <span>💖</span>
           <span className="italic text-3xl font-accent bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
             {safeData.receiverName}
           </span>

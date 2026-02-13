@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Heart, Sparkles, ArrowRight } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 import FloatingHearts from "../component/particles/FloatingHearts";
 
 
@@ -73,14 +73,6 @@ const Home = () => {
               <Heart className="w-5 h-5 group-hover:fill-white" />
             </button>
 
-            <button
-              onClick={() => navigate("/ValentineWeek")}
-              className="group bg-white/50 text-primary hover:bg-white/80 backdrop-blur-sm border border-white/60 rounded-full px-6 py-4 hover:scale-105 flex items-center gap-2"
-              data-testid="explore-week-btn"
-            >
-              Explore Valentine Week
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1" />
-            </button>
           </motion.div>
 
           {/* Decorative Elements */}
