@@ -42,7 +42,10 @@ const Special = () => {
   return (
     <div className="relative min-h-screen w-screen overflow-hidden bg-gradient-to-br from-primary-50 via-secondary to-primary-100">
       <FloatingHearts />
-      <button
+     
+      <div className="absolute z-10 inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,228,230,0.4),_transparent_60%)]" />
+
+     <button
           type="button"
           onClick={() => navigate("/")}
           className="m-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
@@ -50,7 +53,6 @@ const Special = () => {
           <span className="text-base">?</span>
           Back to Home
         </button>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,228,230,0.4),_transparent_60%)]" />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-2xl items-center justify-center px-6 py-16">
         <div className="w-full rounded-[2.5rem] border border-primary/15 bg-white/80 p-8 text-center shadow-2xl shadow-primary/20 backdrop-blur-xl sm:p-12">
