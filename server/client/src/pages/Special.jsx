@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { storeSpecialPassword } from "../services/api";
 import { useNavigate } from "react-router";
+import FloatingHearts from "../component/particles/FloatingHearts";
 
 const Special = () => {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ const Special = () => {
 
   return (
     <div className="relative min-h-screen w-screen overflow-hidden bg-gradient-to-br from-primary-50 via-secondary to-primary-100">
+      <FloatingHearts />
       <button
           type="button"
           onClick={() => navigate("/")}
@@ -116,4 +118,4 @@ const Special = () => {
   );
 };
 
-export default Special
+export default Special;
