@@ -27,7 +27,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   })
 );
-app.options("*", cors());
+app.options("/*", cors());
 app.use(express.json());
 
 app.use("/api/valentine", valentineRoutes);
