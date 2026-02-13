@@ -53,14 +53,7 @@ const ValentineView = () => {
 
   return (
     <div className="min-h-screen w-screen bg-secondary">
-      <button
-          type="button"
-          onClick={() => navigate("/")}
-          className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-sm ring-1 ring-primary/10 transition hover:bg-white"
-        >
-          <span className="text-base">?</span>
-          Back to Home
-        </button>
+      
 
         {/* FloatingHearts */}
         <FloatingHearts />
