@@ -111,7 +111,7 @@ const Valentineday = ({ data }) => {
                 <h1 className="text-3xl font-heading text-primary-700 sm:text-5xl">
                   <span className="block">
                     Hey{" "}
-                    <span className="font-accent text-primary-600">
+                    <span className="font-accent text-primary-900">
                       {safeData.receiverName},
                     </span>
                   </span>
@@ -196,7 +196,7 @@ const Valentineday = ({ data }) => {
                 </div>
 
                 <div className="mt-6 rounded-3xl border border-primary/30 bg-white/90 px-6 py-5 text-primary-700 shadow-lg shadow-primary/10">
-                  <p className="text-base font-body sm:text-lg">
+                  <p className="text-base font-mono sm:text-lg">
                     {safeData.message}
                   </p>
                 </div>
