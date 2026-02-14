@@ -23,10 +23,7 @@ const Valentineday = ({ data }) => {
     [data]
   );
 
-  const messages = useMemo(() => {
-    if (data?.message) return [data.message, ...DEDICATIONS];
-    return [DEFAULT_MESSAGE, ...DEDICATIONS];
-  }, [data?.message]);
+  const messages = useMemo(() => [...DEDICATIONS], []);
 
   const [stage, setStage] = useState(0);
   const [messageIndex, setMessageIndex] = useState(0);
