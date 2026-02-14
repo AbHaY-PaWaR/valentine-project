@@ -8,7 +8,7 @@ import Hugday from '../component/ui/Hugday'
 import Kissday from '../component/ui/Kissday'
 import Valentineday from '../component/ui/Valentineday'
 
-const ValentineDays = () => {
+const ValentineWeek = () => {
   return (
     <div>
        {/* <RoseDay /> */}
@@ -34,4 +34,4 @@ const ValentineDays = () => {
   )
 }
 
-export default ValentineDays
+export default ValentineWeek

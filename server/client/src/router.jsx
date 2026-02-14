@@ -6,9 +6,8 @@ import Home from "./pages/Home";
 
 import CreateValentine from "./pages/CreateValentine";
 import ValentineView from "./pages/ValentineView";
-import RoseDay from "./component/ui/RoseDay";
-import ValentineDays from "./pages/ValentineDays";
 import Special from "./pages/Special";
+import ValentineWeek from "./pages/ValentineWeek";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/ValentineWeek",
-    element: <ValentineDays />,
+    element: <ValentineWeek />,
   },
   
    {

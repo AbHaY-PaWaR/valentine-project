@@ -5,13 +5,13 @@ import waitingBearGif from "../../assets/gif-img/waitingbear.gif";
 import valentineGif from "../../assets/gif-img/valentine.gif";
 
 const DEFAULT_MESSAGE =
-  "Happy Valentine's Day! You are my heart's favorite. 💘✨";
+  "Happy Valentine's Day! You are my heart's favorite. \u{1F498}\u2728";
 
 const DEDICATIONS = [
-  "You are my favorite hello and my hardest goodbye. 💞",
-  "Every heartbeat of mine says your name. 💓",
-  "With you, every day feels like Valentine’s Day. 🌹",
-  "I choose you, today and always. 💍",
+  "You are my favorite hello and my hardest goodbye. \u{1F49E}",
+  "Every heartbeat of mine says your name. \u{1F493}",
+  "With you, every day feels like Valentine's Day. \u{1F339}",
+  "I choose you, today and always. \u{1F48D}",
 ];
 
 const Valentineday = ({ data }) => {
@@ -64,8 +64,10 @@ const Valentineday = ({ data }) => {
     if (!areaRef.current || !noButtonRef.current) return;
     const area = areaRef.current.getBoundingClientRect();
     const btn = noButtonRef.current.getBoundingClientRect();
-    const x = Math.max(0, area.width / 2 + 80);
-    const y = Math.max(0, area.height / 2 - btn.height / 2);
+    const maxX = Math.max(0, area.width - btn.width);
+    const maxY = Math.max(0, area.height - btn.height);
+    const x = Math.min(maxX, Math.max(0, area.width / 2 + 80));
+    const y = Math.min(maxY, Math.max(0, area.height / 2 - btn.height / 2));
     setNoPos({ x, y });
   }, []);
 
@@ -115,8 +117,10 @@ const Valentineday = ({ data }) => {
                       {safeData.receiverName},
                     </span>
                   </span>
-                  <span className="block">will U be my Valentine
-                    <br /> 💘💌</span>
+                  <span className="block">
+                    will U be my Valentine
+                    <br /> {"\u{1F498}\u{1F48C}"}
+                  </span>
                 </h1>
 
                 <div className="relative mt-10 h-[35vh] w-full">
@@ -130,7 +134,6 @@ const Valentineday = ({ data }) => {
                       Yes
                     </motion.button>
                   </div>
-
                 </div>
               </motion.div>
             )}
@@ -157,10 +160,10 @@ const Valentineday = ({ data }) => {
                 </div>
 
                 <p className="mt-6 text-3xl font-accent text-primary-600 sm:text-4xl">
-                  I know it ❤️💖
+                  I know it {"\u2764\uFE0F\u{1F496}"}
                 </p>
                 <p className="mt-4 text-sm font-body text-primary-700/80 sm:text-base">
-                  You just made my whole Valentine’s Day brighter. ✨💘
+                  You just made my whole Valentine's Day brighter. {"\u2728\u{1F498}"}
                 </p>
 
                 <motion.button
