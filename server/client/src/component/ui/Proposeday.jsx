@@ -6,6 +6,7 @@ import { BackgroundBeams } from "./BackgroundBeams";
 import confettiAnimation from "../../assets/lottie/confetti.json";
 import teddyAnimation from "../../assets/lottie/teddy.lottie";
 import roseAnimation from "../../assets/lottie/rose.lottie";
+import "./proposeday.css";
 
 const NO_MESSAGES = [
   "Hey, give it a chance 💖",
@@ -54,48 +55,6 @@ const Proposeday = ({ data }) => {
 
   return (
     <div className="relative w-screen min-h-screen overflow-hidden bg-secondary">
-      <style>{`
-        @keyframes shake {
-          0% { transform: translateX(0); }
-          20% { transform: translateX(-6px); }
-          40% { transform: translateX(6px); }
-          60% { transform: translateX(-4px); }
-          80% { transform: translateX(4px); }
-          100% { transform: translateX(0); }
-        }
-        input[type="range"].propose-slider {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 100%;
-          height: 16px;
-          border-radius: 999px;
-          background: linear-gradient(90deg, #fecdd3 0%, #fff 50%, #fda4af 100%);
-          outline: none;
-        }
-        input[type="range"].propose-slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 52px;
-          height: 52px;
-          border-radius: 999px;
-          background: #e11d48;
-          box-shadow: 0 12px 25px rgba(225, 29, 72, 0.35);
-          border: 4px solid #fff1f2;
-          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 21s-8-4.35-8-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.65-8 10-8 10z"/></svg>');
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-        input[type="range"].propose-slider::-moz-range-thumb {
-          width: 52px;
-          height: 52px;
-          border: 4px solid #fff1f2;
-          border-radius: 999px;
-          background: #e11d48;
-          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 21s-8-4.35-8-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.65-8 10-8 10z"/></svg>');
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-      `}</style>
 
       <BackgroundBeams className="opacity-60" />
 

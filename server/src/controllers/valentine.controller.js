@@ -1,31 +1,42 @@
 
+import { randomBytes } from "crypto";
 import Valentine from "../models/Valentine.js";
 
-const createUniqueSlug = async () => {
-  for (let i = 0; i < 5; i += 1) {
-    const slug = Math.random().toString(36).substring(2, 9);
-    const exists = await Valentine.exists({ slug });
-    if (!exists) return slug;
-  }
-  return `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
-};
+const generateSlug = () => randomBytes(6).toString("hex");
 
 export const createValentine = async (req, res) => {
   try {
     const { day, senderName, receiverName, message, gender } = req.body;
-    const slug = await createUniqueSlug();
 
-    await Valentine.create({
-      day,
-      senderName,
-      receiverName,
-      message,
-      gender,
-      slug,
-    });
+    let slug = generateSlug();
+    let doc;
+    try {
+      doc = await Valentine.create({
+        day,
+        senderName,
+        receiverName,
+        message,
+        gender,
+        slug,
+      });
+    } catch (err) {
+      if (err.code !== 11000) throw err;
+      // Extremely rare slug collision — retry once with a fresh slug.
+      // A second consecutive collision (with 48-bit entropy slugs) is
+      // treated as a server error and the outer catch returns 500.
+      slug = generateSlug();
+      doc = await Valentine.create({
+        day,
+        senderName,
+        receiverName,
+        message,
+        gender,
+        slug,
+      });
+    }
 
     res.status(201).json({
-      link: `/v/${day}/${slug}`,
+      link: `/v/${doc.day}/${doc.slug}`,
     });
   } catch (err) {
     res.status(500).json({ error: "Failed to create Valentine" });

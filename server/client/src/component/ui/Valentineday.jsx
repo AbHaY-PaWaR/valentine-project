@@ -32,6 +32,7 @@ const Valentineday = ({ data }) => {
 
   const areaRef = useRef(null);
   const noButtonRef = useRef(null);
+  const noHoverTimerRef = useRef(null);
 
   const moveNoButton = () => {
     if (!areaRef.current || !noButtonRef.current) return;
@@ -75,7 +76,10 @@ const Valentineday = ({ data }) => {
 
   const handleNoHover = () => {
     if (!hasClickedNo) return;
-    moveNoButton();
+    // Debounce: only move the button once per 100ms to avoid
+    // calling getBoundingClientRect() on every pixel of mouse movement.
+    if (noHoverTimerRef.current) clearTimeout(noHoverTimerRef.current);
+    noHoverTimerRef.current = setTimeout(moveNoButton, 100);
   };
 
   const handleNextMessage = () =>
